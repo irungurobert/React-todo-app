@@ -1,5 +1,6 @@
 // TodoItem.js
 import React from "react";
+import './todoitem.css';
 
 
 function TodoItem({ title, id, handleDelete, onToggle, checked, handleEdit,isEditting,handleSaveTodo,handleUpdate }) {
@@ -9,6 +10,7 @@ function TodoItem({ title, id, handleDelete, onToggle, checked, handleEdit,isEdi
       <>
       <form onSubmit={()=>{handleUpdate(id)}}>
       <input type="text"
+      className="todo__input"
           value={title}
           onChange={(e)=>{handleSaveTodo(id,e.target.value)}}     
       />
