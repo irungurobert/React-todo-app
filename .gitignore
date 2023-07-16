@@ -21,3 +21,11 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# Ignore a specific file in the component folder
+/Components/check.jsx
+/Components/counter.jsx
+/Components/counters.jsx
+/Components/form.jsx
+/Components/likes.jsx
+
