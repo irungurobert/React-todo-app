@@ -90,7 +90,7 @@ function App() {
   }
 
   return (
-    <div style={{ textAlign: "center", marginTop: "2em" }}>
+    <div style={{ textAlign: "center", marginTop: "2em"}} className="app__body">
       <header>
         <Header />
       </header>

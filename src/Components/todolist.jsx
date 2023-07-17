@@ -5,6 +5,8 @@ import TodoItem from "./todoitem";
 function TodoList({ todos, onDelete, onToggle, onEdit,onSaveEdit,onUpdate }) {
   return (
     <>
+    <div style={{display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center'}}>
+
       {todos.map((todo) => (
         <TodoItem
           key={todo.id}
@@ -19,6 +21,9 @@ function TodoList({ todos, onDelete, onToggle, onEdit,onSaveEdit,onUpdate }) {
           handleUpdate={onUpdate}
         />
       ))}
+    </div>
+    
+
     </>
   );
 }
