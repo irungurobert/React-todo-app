@@ -3,6 +3,7 @@ import ReactDOM from 'react-dom/client';
 import './index.css';
 import reportWebVitals from './reportWebVitals';
 import  'bootstrap/dist/css/bootstrap.css';
+import 'bootstrap/dist/js/bootstrap';
 // import Counters from './Components/counters';
 // import Naming from './Components/naming';
 // import Likes from './Components/likes';
