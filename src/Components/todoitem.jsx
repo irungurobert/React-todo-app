@@ -3,7 +3,7 @@ import React from "react";
 import "./todoitem.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
-  faEdit,
+
   faEllipsisVertical,
   faPen,
   faPlus,
@@ -25,15 +25,6 @@ function TodoItem({
     <div>
       {isEditting ? (
         <>
-          <div
-            style={{
-              borderRadius: "60px",
-              padding: "1.3rem 3rem",
-              backgroundColor: "rgb(247, 242, 242)",
-              textAlign: "center",
-            }}
-            className="m-2"
-          >
             <form
               onSubmit={() => {
                 handleUpdate(id);
@@ -48,7 +39,8 @@ function TodoItem({
                 }}
               />
               <button
-                className="m-3 btn btn-primary"
+                style={{color:'green'}}
+                className="m-3 btn btn-sm"
                 type="submit"
                 onClick={() => {
                   handleUpdate(id);
@@ -58,7 +50,6 @@ function TodoItem({
 
               </button>
             </form>
-          </div>
         </>
       ) : (
         <>
