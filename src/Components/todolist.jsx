@@ -1,11 +1,15 @@
 // TodoList.js
 import React, { Component } from "react";
 import TodoItem from "./todoitem";
+import FlipMove from 'react-flip-move';
 
 function TodoList({ todos, onDelete, onToggle, onEdit,onSaveEdit,onUpdate }) {
   return (
     <>
+    
+
     <div style={{display:'flex',flexDirection:'column',justifyContent:"center",alignItems:'center'}}>
+  <FlipMove>
 
       {todos.map((todo) => (
         <TodoItem
@@ -21,7 +25,9 @@ function TodoList({ todos, onDelete, onToggle, onEdit,onSaveEdit,onUpdate }) {
           handleUpdate={onUpdate}
         />
       ))}
+  </FlipMove>
     </div>
+    
     
 
     </>

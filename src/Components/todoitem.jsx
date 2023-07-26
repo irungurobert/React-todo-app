@@ -1,5 +1,5 @@
 // TodoItem.js
-import React from "react";
+import React, { forwardRef } from "react";
 import "./todoitem.css";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
@@ -10,7 +10,8 @@ import {
   faTrash,
 } from "@fortawesome/free-solid-svg-icons";
 
-function TodoItem({
+
+const TodoItem = forwardRef(({
   title,
   id,
   handleDelete,
@@ -20,36 +21,36 @@ function TodoItem({
   isEditting,
   handleSaveTodo,
   handleUpdate,
-}) {
+}, ref) => {
   return (
-    <div>
+    <div ref={ref}>
       {isEditting ? (
         <>
-            <form
-              onSubmit={() => {
+          <form
+            onSubmit={() => {
+              handleUpdate(id);
+            }}
+          >
+            <input
+              type="text"
+              className="todo__input"
+              value={title}
+              onChange={(e) => {
+                handleSaveTodo(id, e.target.value);
+              }}
+            />
+            <button
+              style={{ color: 'green' }}
+              className="m-3 btn btn-lg"
+              type="submit"
+              onClick={() => {
                 handleUpdate(id);
               }}
             >
-              <input
-                type="text"
-                className="todo__input"
-                value={title}
-                onChange={(e) => {
-                  handleSaveTodo(id, e.target.value);
-                }}
-              />
-              <button
-                style={{color:'green'}}
-                className="m-3 btn btn-sm"
-                type="submit"
-                onClick={() => {
-                  handleUpdate(id);
-                }}
-              >
-                <FontAwesomeIcon icon={faPlus} size="lg" />
+              <FontAwesomeIcon icon={faPlus} size="lg" />
 
-              </button>
-            </form>
+            </button>
+          </form>
         </>
       ) : (
         <>
@@ -59,7 +60,7 @@ function TodoItem({
               padding: "1.3rem 3rem",
               backgroundColor: "rgb(247, 242, 242)",
               textAlign: "center",
-          
+
             }}
             className="m-2 "
           >
@@ -69,13 +70,13 @@ function TodoItem({
                 onToggle(id, event);
               }}
               id={id}
-              style={{ marginRight: "30px" }}
+              style={{ marginRight: "40px" }}
               type="checkbox"
             />
             <span style={{ fontSize: "20px" }}>{title}</span>
             <div
               className="dropdown"
-              style={{ display: "inline", marginLeft:'50px' }}
+              style={{ display: "inline", marginLeft: '50px' }}
             >
               <button
                 className="btn "
@@ -114,6 +115,9 @@ function TodoItem({
       )}
     </div>
   );
-}
+
+})
+
+
 
 export default TodoItem;
